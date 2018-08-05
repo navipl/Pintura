@@ -1,0 +1,9 @@
+Fonts used in this design;
+
+Font: Lato, 
+Author: tyPoland Lukasz Diedzic, 
+Url: http://www.fontsquirrel.com/fonts/lato;
+
+Font: Jenna Sue, 
+Author: Jenna Sue Design, 
+Url: http://www.fontsquirrel.com/fonts/jenna-sue;

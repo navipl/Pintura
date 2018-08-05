@@ -1,0 +1,133 @@
+
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+ul, figure, h2, h1, p {
+	margin: 0px;
+	padding: 0px;
+}
+
+#Conteudo {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(5, 600px) 70px;
+}
+
+#Topo {
+	display: grid;
+	align-items: center;
+	justify-items: center; 
+	grid-template-rows: auto 1fr;
+	grid-auto-flow: row;
+}
+
+
+#Topo > .topo-menu {
+	display: inline-grid;
+	grid-template-rows: 1fr;
+	grid-auto-columns: auto;
+	grid-auto-flow: column;
+	grid-column-gap: 30px;
+	align-self: start;
+	justify-self: right;
+	grid-column: 1/2;
+	grid-row: 1/2;
+
+
+	list-style: none;
+	margin: 20px 50px 0px 0px;
+}
+
+
+#Topo > .topo-logo {
+	grid-column: 1/2;
+	grid-row: 1/3;
+}
+
+
+#Sobre {
+	background-color: blue;
+}
+
+.box-cont {
+	display: grid;
+	align-items: center;
+	justify-items: center
+}
+
+#Sobre > .cont-sobre {
+	background-color: white;
+}
+
+.box-auto {
+	width: 300px;
+	height: auto;
+	padding: 30px;
+
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-auto-rows: auto;
+	grid-auto-flow: row;
+	grid-gap: 30px;
+
+
+}
+
+#Servicos > .cont-sercicos {
+	width: auto;
+	height: auto;
+
+	display: inline-grid;
+	grid-template-columns: repeat(3, 100px);
+	grid-auto-rows: 100px;
+	grid-auto-flow: row;
+
+	grid-gap: 30px;
+
+	align-items: center;
+	justify-items: center;
+	text-align: center;
+}
+
+#Galeria {
+	background-color: red;
+}
+
+#Galeria > .cont-galeria {
+	display: grid;
+
+	display: inline-grid;
+	grid-template-columns: repeat(3, 150px);
+	grid-auto-rows: 100px;
+	grid-auto-flow: row;
+
+	grid-gap: 30px;
+
+}
+
+#Galeria > .cont-galeria > .img-principal {
+	grid-row: span 2;
+	grid-column: span 3;
+}
+
+#Galeria > .cont-galeria > figure {
+	background-color: white;
+}
+
+
+#Solicite {
+	background-color: grey;
+}
+
+#Solicite > .cont-solicite {
+	background-color: white;
+}
+
+
+#Rodape {
+	background-color: blue;
+}
