@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
+<!--CSS-->
 <link rel="stylesheet" href="./css/pintura-grid.css" type="text/css">
 <link rel="stylesheet" href="./css/pintura-styles.css" type="text/css">
+
+<!--JS-->
+<script type="text/javascript" language="javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" language="javascript" src="js/script.js"></script>
+
 
 <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Oswald" rel="stylesheet">
 
@@ -16,105 +22,201 @@
 	<div id="Conteudo">
 
 		<div id="Topo">
-			<ul class="topo-menu">
-				<li><a href="">Sobre</a></li>
-				<li><a href=""></a>Serviços</li>
-				<li><a href="">Galeria</a></li>
-				<li><a href="">Solicite</a></li>
-			</ul>
+			<div id="Topo-Menu" class="topo-apagado topo-cont ">
+				<figure class="topo-logo">
+					<!--<img src="img/logo2.png" alt="" width="150px" height="auto">-->
+				</figure>
 
-			<figure class="topo-logo">
-				<img src="img/logo.png" alt="" width="200" height="auto">
-			</figure>
+
+				<ul class="menu-pintura">
+					<li><a href="#Sobre">Sobre</a></li>
+					<li><a href="#Servicos">Serviços</a></li>
+					<li><a href="#Galeria">Galeria</a></li>
+					<li><a href="#Solicite">Solicite</a></li>
+				</ul>
+				
+			</div>
+
+			<div class="titulo-topo">
+				<figure class="sombraCor"><img src="img/icon1.png" alt="" width="130px" height="alto"></figure>
+				<div class="titulo-cont">
+					<h1>SMF Pintura Industrial</h1>
+					<p>Pintando sua <b>VIDA</b> em todas as <b>CORES</b>!</p>
+					
+				</div>
+				
+			</div>
+
+			
 
 		</div>
 
 		<div id="Sobre" class="box-cont">
+			<div class="box-auto">  
 
-			<div class="cont-sobre box-auto">
-				<h2>Sobre</h2>
-				<p>Esta empresa foi desenvoldida no ano tal por Fulano e tau e tau e tau e tau e tau e tau e tau e tau e tau...</p>
+				<p>Trabalhamos a mais de 10 anos com pintura industrial, atuando em principais empresas tais como Citroem, Avomac, Hamon, Vimaq, Metalurgica Rodosol entre outras. </p>
+
 			</div>
+			
 
 		</div>
 
 		<div id="Servicos" class="box-cont">
-			<div class="cont-sercicos">
-				<figure>
-					<img src="" alt="">
-					<figcaption>Abrasivo</figcaption>
-				</figure>
+			<div class="cont-servicos">
+				<h2>SERVIÇOS</h2>
 
-				<figure>
-					<img src="" alt="">
-					<figcaption>Industrial</figcaption>
-				</figure>
+				<div class="img-servicos" >
+					<figure >
+						<img src="img/servicos/abrasivo.jpeg" alt="">
+						<figcaption>
+							<span>Tratamento</span>
+							<p>Abrasivo</p>
+						</figcaption>
+					</figure>
 
-				<figure>
-					<img src="" alt="">
-					<figcaption>Civil</figcaption>
-				</figure>
+					<figure >
+						<img src="img/servicos/industrial.jpeg" alt="">
+						<figcaption>
+							<span>Pintura</span>
+							<p>Industrial</p></figcaption>
+						</figure>
 
-				<figure>
-					<img src="" alt="">
-					<figcaption>Predial</figcaption>
-				</figure>
+						<figure >
+							<img src="img/servicos/civil.jpeg" alt="">
+							<figcaption><span>Pintura</span>
+								<p>Civil</p>
+							</figcaption>
+						</figure>
 
-				<figure>
-					<img src="" alt="">
-					<figcaption>Faixa de <br> 
-					Estacionamento</figcaption>
-				</figure>
+						<figure >
+							<img src="img/servicos/predial.jpeg" alt="">
+							<figcaption><span>Pintura</span><p>Predial</p></figcaption>
+						</figure>
 
-				<figure>
-					<img src="" alt="">
-					<figcaption>Outra Coisa</figcaption>
-				</figure>
-				
+						<figure>
+							<img src="img/servicos/faixa.png" alt="">
+							<figcaption><span>Faixa</span><p>de
+							Estacionamento</p></figcaption>
+						</figure>
+
+						<figure >
+							<img src="img/servicos/outros.jpeg" alt="">
+							<figcaption><span>Pintura</span><p>Outra Coisa</p></figcaption>
+						</figure>
+
+					</div>
+
+
+				</div>
+
+
 			</div>
-			
+
+			<div id="Galeria" class="cont-galeria">
+
+				<figure id="1" >
+					<img class="espelho" src="img/galeria/1.jpeg" alt="">
+				</figure>
+
+				<figure id="2">
+					<img src="img/galeria/2.jpeg" alt="">
+				</figure>
+
+				<figure id="3" >
+					<img src="img/galeria/3.jpeg" alt="">
+				</figure>
+
+				<figure id="4" >
+					<img src="img/galeria/4.jpeg" alt="">
+				</figure>
+
+				<figure id="5" >
+					<img src="img/galeria/5.jpeg" alt="">
+				</figure>
+
+				<figure id="6" >
+					<img src="img/galeria/6.jpeg" alt="">
+				</figure>
+
+			</div>
+
+			<div id="Solicite" class="box-cont">
+				<div class="cont-solicite box-auto">
+					<h2>Solicite um Orçamento</h2>
+					<form class="form-fala">
+						<div class="nome group">
+							<input type="text" required>
+							<span class="highlight"></span>
+							<span class="bar"></span>
+							<label>* Nome</label>
+						</div>
+
+
+						<div class="email group">
+							<input type="text" required>
+							<span class="highlight"></span>
+							<span class="bar"></span>
+							<label>* Email</label>
+						</div>
+
+						<div class="tel group">
+							<input type="text" required>
+							<span class="highlight"></span>
+							<span class="bar"></span>
+							<label>* DDD + Telefone</label>
+						</div>
+
+						<div class="cel group">
+							<input type="text" required>
+							<span class="highlight"></span>
+							<span class="bar"></span>
+							<label>DDD + Celular</label>
+						</div>
+
+						<div class="cidade group">
+							<input type="text" required>
+							<span class="highlight"></span>
+							<span class="bar"></span>
+							<label>Cidade</label>
+						</div>
+
+						<select class="uf formselect">
+							<option value="ES">ES</option>
+
+						</select> 
+
+						<select class="servico formselect">
+							<option value="">Serviços</option>
+							<option value="Tratamento Abrasivo">Tratamento Abrasivo</option>
+							<option value="Pintura Industrial">Pintura Industrial</option>
+							<option value="Pintura Civil">Pintura Civil</option>
+							<option value="Pintura Predial">Pintura Predial</option>
+							<option value="Faixa de Estacionamento">Faixa de Estacionamento</option>
+							<option value="Outros">Outros</option>
+						</select>
+
+						<div class="descricao">
+							<textarea name="Descricao" placeholder="* Descrição"></textarea>
+						</div>
+
+						<div class="btn-fala">
+							<button type="button">Enviar</button>
+							<p>* Campos Obrigatório</p>
+						</div>
+					</form>
+
+				</div>
+
+
+			</div>
+
+			<div id="Rodape"></div>
+
 
 		</div>
 
-		<div id="Galeria" class="box-cont">
-			<div class="cont-galeria">
-
-				<figure class="img-principal">
-					<img src="" alt="">
-				</figure>
-
-				<figure>
-					<img src="" alt="">
-				</figure>
-
-				<figure>
-					<img src="" alt="">
-				</figure>
-
-				<figure>
-					<img src="" alt="">
-				</figure>
-				
-			</div>
-
-		</div>
-
-		<div id="Solicite" class="box-cont">
-			<div class="cont-solicite box-auto">
-				<h2>Solicite um Orçamento</h2>
-				<form action=""></form>
-			</div>
-			
-
-		</div>
-
-		<div id="Rodape"></div>
 
 
-	</div>
-
-
-
-	
-</body>
-</html>
+		<script type="text/javascript" language="javascript" src="js/jquery-3.3.1.min.js"></script>
+	</body>
+	</html>
