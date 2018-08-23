@@ -4,7 +4,7 @@ function PiscaPisca() {
 	var controle = [];
 
 //Variavel que recebe a quantidade de filhos (figures) do ID Galerias 
-var qtdFotos = $('#Galeria').children().length;
+var qtdFotos = $('.cont-galeria').children().length;
 
  //Funçao oculta a seção solicitada
  function Ocultar() {
@@ -71,8 +71,26 @@ var qtdFotos = $('#Galeria').children().length;
     }
 
 
+    /*Dimenção da tela*/ 
+    function Dimecao() {
+    	var altuta = $(window).height();//variavel que aloca a altura da janela
+    	var largura = $(window).width();//variavel que aloca a largura da janela
+        
+        /*esses caras estão criando o codigo que serrá adicionado na tag Script que conten a classe Resoluçao
+        ela ira adicionar as novas resoluções aos conteiners principais de cada seção*/
+    	var rowConteiners = "--conteiners: repeat(4,"+ altuta +"px)" + (altuta + altuta/10 ) + "px 70px;";
+        var ContInterno = "--altura-especial: " + (altuta/3) * 2 + "px";
+    	
+    	$("#resolucao").append(":root {" + rowConteiners 
+    		+ ContInterno +"}");
+    }
+
+
+//Esse carra cha as funções conforme o carregamento da página ocorra sem erro
     $(document).ready(function() {
     	$(window).on("load",function(){
+
+    		Dimecao();
 
     		PiscaPisca();/*Chama o efeiro Pisca Pisca*/ 
     		

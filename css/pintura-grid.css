@@ -57,13 +57,13 @@ ul, figure, h2, h1, p {
 }
 
 @-webkit-keyframes topoasezo {
-	0% {padding: 25px 100px 25px 100px; background-color: #19323c;}
+	0% {padding: 15px 100px 15px 100px; background-color: #19323c;}
 
 	100% {padding: 5px 100px 5px 100px; background-color: rgb(25, 50, 60, 0.9);}
 }
 
 @keyframes topoasezo {
-	0% {padding: 25px 100px 25px 100px; background-color: #19323c;}
+	0% {padding: 15px 100px 15px 100px; background-color: #19323c;}
 
 	100% {padding: 5px 100px 5px 100px; background-color: rgb(25, 50, 60, 0.9);}
 }
@@ -130,24 +130,26 @@ ul, figure, h2, h1, p {
 	color: #19323c;
 }
 
+.titulo-topo p b {
+	font-family: 'Fredericka the Great', cursive;
+}
+
 .titulo-topo p b:nth-child(1) {
 	color: #9bc53d;
-	font-family: 'Fredericka the Great', cursive;
 }
 
 .titulo-topo p b:nth-child(2) {
 	color: #dd403a;
-	font-family: 'Fredericka the Great', cursive;
 }
 
 #Conteudo {
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: 800px 500px 800px 500px 800px 70px;
+	grid-template-rows: var(--conteiners, 700px 700px 700px 700px 700px 70px);
 
 	-ms-display: grid;
 	-ms-grid-template-columns: 1fr;
-	-ms-grid-template-rows: 800px 500px 800px 500px 800px 70px;
+	-ms-grid-template-rows: var(--conteiners, 700px 700px 700px 700px 700px 70px);
 
 	background-color: #fcfcf8;
 }
@@ -177,7 +179,6 @@ ul, figure, h2, h1, p {
 
 	-ms-display: grid;
 
-	width: 600px;
 	align-self: center;
 	justify-self: center;
 	align-items: center;
@@ -219,10 +220,10 @@ ul, figure, h2, h1, p {
 
 /*Efeito de Animação do topo principal*/
 .sombraCor {
-	animation: sombraCor 5s infinite;
+	animation: sombraCor 4s infinite;
 	animation-fill-mode: both;
 
-	-webkit-animation: sombraCor 5s infinite;
+	-webkit-animation: sombraCor 4s infinite;
 	-webkit-animation-fill-mode: both;
 
 }
@@ -233,17 +234,17 @@ ul, figure, h2, h1, p {
 		box-shadow: 8px 8px 0px 1px #19323c;
 	}
 
-	20% {
+	25% {
 		border: 1px solid #9bc53d;
 		box-shadow: -8px 8px 0px 1px #9bc53d;
 	}
 
-	40% {
+	50% {
 		border: 1px solid #dd403a;
 		box-shadow: -8px -8px 0px 1px #dd403a;
 	}
 
-	80% {
+	75% {
 		border: 1px solid #30bced;
 		box-shadow: 8px -8px 0px 1px #30bced;
 	}
@@ -260,17 +261,17 @@ ul, figure, h2, h1, p {
 		box-shadow: 8px 8px 0px 1px #19323c;
 	}
 
-	20% {
+	25% {
 		border: 1px solid #9bc53d;
 		box-shadow: -8px 8px 0px 1px #9bc53d;
 	}
 
-	40% {
+	50% {
 		border: 1px solid #dd403a;
 		box-shadow: -8px -8px 0px 1px #dd403a;
 	}
 
-	80% {
+	75% {
 		border: 1px solid #30bced;
 		box-shadow: 8px -8px 0px 1px #30bced;
 	}
@@ -301,19 +302,34 @@ ul, figure, h2, h1, p {
 
 
 
-#Sobre {
-	background-color: #dd403a;
-	color: #19323c;
-	-webkit-clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
-	clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
-}
 
-
-#Sobre p{
+.cont-sobre p{
 	font-family: 'Oswald', sans-serif;
 	color: #fcfcf8;
 	font-size: 30px;
 	text-align: center;
+
+	width: 500px;
+	height: auto;
+}
+
+.cont-sobre{
+	background-color: #dd403a;
+	color: #19323c;
+	-webkit-clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+	clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+
+	width: 100%;
+	height: var(--altura-especial, 500px);
+
+	box-sizing: border-box;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-auto-rows: auto;
+	grid-auto-flow: row;
+	grid-gap: 30px;
+	justify-items: center; 
+	align-items: center;
 }
 
 .box-cont {
@@ -374,6 +390,8 @@ ul, figure, h2, h1, p {
 	-ms-grid-template-columns: repeat(3, 300px);
 	-ms-grid-auto-rows: 250px;
 	-ms-grid-auto-flow: row;
+
+	grid-gap: 20px;
 
 	align-items: center;
 	justify-items: center;
@@ -466,7 +484,7 @@ ul, figure, h2, h1, p {
 	-ms-grid-column: 1/2;
 	-ms-grid-row: 1/2;
 
-	font-size: 25px;
+	font-size: 30px;
 	font-family: 'Oswald', sans-serif;
 	color: #fcfcf8;
 	z-index: -1;
@@ -480,7 +498,7 @@ ul, figure, h2, h1, p {
 
 .cont-servicos figure figcaption span{
 	align-self: end;
-	color: #fcfcf8;
+	color: #19323c;
 	font-size: 40px;
 }
 
@@ -501,6 +519,7 @@ ul, figure, h2, h1, p {
 	-ms-grid-auto-rows: auto;
 	-ms-grid-auto-flow: row;
 
+	height: var(--altura-especial, 500px);
 	background-color: #fcfcf8;
 
 	-webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
@@ -518,7 +537,7 @@ ul, figure, h2, h1, p {
 	-ms-grid-template-rows: 1fr;
 
 	width: 100%;
-	height: auto;
+	height: 100%;
 	overflow: hidden;
 }
 
