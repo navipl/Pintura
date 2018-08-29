@@ -48,12 +48,19 @@ var qtdFotos = $('.cont-galeria').children().length;
         	Ocultar();
         } ,2000);
 
-/*
-       $('#Galeria').mouseover(function() {
+        //Se o mouse estiver encima das imagens a animação para
+        $('.cont-galeria').mouseover(function() {
         	Limpar();
         	clearInterval(PiscaAtivo);
+        });
 
-        });*/
+        //A animação volta quandio o mouse sai de cima das imagens
+        $('.cont-galeria').mouseleave(function() {
+        	PiscaAtivo = setInterval(function() {
+        		Limpar();
+        		Ocultar();
+        	} ,2000);
+        });
     };
 
 
@@ -71,34 +78,35 @@ var qtdFotos = $('.cont-galeria').children().length;
     }
 
 
-    /*Dimenção da tela*/ 
+    /*Dimenção da tela 
     function Dimecao() {
     	var altuta = $(window).height();//variavel que aloca a altura da janela
     	var largura = $(window).width();//variavel que aloca a largura da janela
-        
+
         /*esses caras estão criando o codigo que serrá adicionado na tag Script que conten a classe Resoluçao
-        ela ira adicionar as novas resoluções aos conteiners principais de cada seção*/
-    	var rowConteiners = "--conteiners: repeat(4,"+ altuta +"px)" + (altuta + altuta/10 ) + "px 70px;";
+        ela ira adicionar as novas resoluções aos conteiners principais de cada seção
+        var rowConteiners = "--conteiners: repeat(3,"+ altuta +"px)" + (altuta + altuta/10 ) + "px 70px;";
         var ContInterno = "--altura-especial: " + (altuta/3) * 2 + "px";
-    	
-    	$("#resolucao").append(":root {" + rowConteiners 
-    		+ ContInterno +"}");
-    }
+
+        $("#resolucao").append(":root {" + rowConteiners 
+        	+ ContInterno +"}");
+    }*/ 
+
+    /*Agrupa e desagrupa a seção Serviços*/
+    
 
 
-//Esse carra cha as funções conforme o carregamento da página ocorra sem erro
-    $(document).ready(function() {
-    	$(window).on("load",function(){
+//Esse carra chama as funções conforme o carregamento da página ocorra sem erro
+$(document).ready(function() {
+	$(window).on("load",function(){
 
-    		Dimecao();
+		PiscaPisca();/*Chama o efeiro Pisca Pisca*/ 
 
-    		PiscaPisca();/*Chama o efeiro Pisca Pisca*/ 
-    		
-    		$(window).scroll(function() {/*Chama o efeiro do Topo*/
-    			TopoFixo();	
-    		});
-    		
-    	});
-    });
+		$(window).scroll(function() {/*Chama o efeiro do Topo*/
+			TopoFixo();	
+		});
+
+	});
+});
 
 
