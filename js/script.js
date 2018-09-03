@@ -14,7 +14,7 @@ var qtdFotos = $('.cont-galeria').children().length;
  	while (sort[0] == controle[0] && sort[0] == controle[1]) {
  		sort[0] = Sorteio();
  	}
- 	$('#' + sort[0]).addClass('ocultar');
+ 	$('.cont-galeria figure:nth-child(' + sort[0] + ')').addClass('ocultar');
 
  	sort[1] = Sorteio();
 
@@ -22,7 +22,7 @@ var qtdFotos = $('.cont-galeria').children().length;
  		sort[1] = Sorteio();
  	}
 
- 	$('#' + sort[1]).addClass('ocultar');
+ 	$('.cont-galeria figure:nth-child(' + sort[1] + ')').addClass('ocultar');
 
  	controle = sort;
 
@@ -36,10 +36,7 @@ var qtdFotos = $('.cont-galeria').children().length;
 
         //Funçao que limpa as clsases da seção tornando ela visivel
         function Limpar() {
-        	for (var i = 0; i <= qtdFotos; i++) {
-        		var id = "#" + i;
-        		$(id).removeClass('ocultar');
-        	}
+        	$('.cont-galeria').children().removeClass('ocultar');
         }
 
         //Chama as funções para criar a animaçã piscapisca
@@ -67,46 +64,62 @@ var qtdFotos = $('.cont-galeria').children().length;
     /*Efeito menu topo*/ 
     function TopoFixo() {
 
-    	if ($(window).scrollTop() >= 300) {
-    		$("#Topo-Menu").addClass('topo-asezo');
-    		$("#Topo-Menu").removeClass('topo-apagado');
-    	}
-    	else {
-    		$("#Topo-Menu").removeClass('topo-asezo');
-    		$("#Topo-Menu").addClass('topo-apagado');
-    	}
-    }
+    	/*Este trecho do codigo fixa o menu ou mantem o mesmo abaixo da seção inicial*/
+        var menuTop = $("#Topo-Menu").offset().top; //Seta a possição inicial do menu com relação ao seu topo
+		var docScroll = $(document).scrollTop(); //Seta a distancia de rolagem do topo conforme decemos a pagina
+		var alturaTop = $("#Topo").outerHeight();//Seta a altura do primeiro conteiner onde o menu deve esta abaixo
+
+     //Se a distancia do topo for maior que a posição em que o menu está, ele passa a ser fixo
+     if (docScroll > menuTop) {
+     	$("#Topo-Menu").addClass("menu-fixo");
+     }
+
+     //Se a possição fixa do menu for menor que a altura do primeiro conteiner ele volta a ficar abaixo do conteiner inicial
+     else if (menuTop < alturaTop){
+     	$("#Topo-Menu").removeClass("menu-fixo");
+     }
 
 
-    /*Dimenção da tela 
-    function Dimecao() {
-    	var altuta = $(window).height();//variavel que aloca a altura da janela
-    	var largura = $(window).width();//variavel que aloca a largura da janela
+    /*Esse trecho identifica a seção que esta sendo visualizada e marca ela no menu*/
+ 	var s = $("#Servicos").position().top;//Posição da seção serviços
+ 	var g = $("#Galeria").position().top;//Posição da seção Galeria
+ 	var o = $("#Solicite").position().top;//Posição da seção orgamentos
+ 	var kids = $(".menu-pintura").children();//Variavel que recebe os itens do menu
 
-        /*esses caras estão criando o codigo que serrá adicionado na tag Script que conten a classe Resoluçao
-        ela ira adicionar as novas resoluções aos conteiners principais de cada seção
-        var rowConteiners = "--conteiners: repeat(3,"+ altuta +"px)" + (altuta + altuta/10 ) + "px 70px;";
-        var ContInterno = "--altura-especial: " + (altuta/3) * 2 + "px";
+ 	if (docScroll >= s && docScroll < g) {
+        kids.removeClass("menu-ativo");//remove a borda de todos os itens do menu
+ 		$(".menu-pintura li:nth-child(1)").addClass("menu-ativo");//Add a borda ao primeiro item
+ 	}
 
-        $("#resolucao").append(":root {" + rowConteiners 
-        	+ ContInterno +"}");
-    }*/ 
+ 	else if (docScroll >= g && docScroll < o) {
+ 		kids.removeClass("menu-ativo");//remove a borda de todos os itens do menu
+ 		$(".menu-pintura li:nth-child(2)").addClass("menu-ativo");//Add a borda ao segundo item
+ 	}
 
-    /*Agrupa e desagrupa a seção Serviços*/
-    
+ 	else if (docScroll >= o) {
+ 		kids.removeClass("menu-ativo");//remove a borda de todos os itens do menu
+ 		$(".menu-pintura li:nth-child(3)").addClass("menu-ativo");//Add a borda ao terceiro item
+ 	}
+
+ 	else {
+ 		kids.removeClass("menu-ativo");
+ 	}
+
+
+ }
 
 
 //Esse carra chama as funções conforme o carregamento da página ocorra sem erro
-$(document).ready(function() {
-	$(window).on("load",function(){
+jQuery(document).ready(function($) {
+	PiscaPisca();//Chama o efeiro Pisca Pisca 
+	TopoFixo();//Chama o efeiro do Topo
 
-		PiscaPisca();/*Chama o efeiro Pisca Pisca*/ 
-
-		$(window).scroll(function() {/*Chama o efeiro do Topo*/
-			TopoFixo();	
-		});
+	/*Chama o efeiro do Topo*/
+	$(document).on("scroll", function() {
+		TopoFixo();
 
 	});
-});
 
+
+});
 
