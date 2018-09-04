@@ -96,7 +96,7 @@ ul, figure, h2, h1, p {
 .menu-pintura a {
 	color: rgb(252, 252, 248, 0.5);
 	font-family: var(--fonte-sub);
-	font-size: 17px;
+	font-size: 1em;
 	text-decoration: none;
 	padding: 0px 1em;
 }
@@ -118,15 +118,14 @@ ul, figure, h2, h1, p {
 }
 
 .titulo-topo p {
-	font-size: 23px;
+	font-size: 1.3em;
 	font-family: var(--fonte-sub);
-	color: rgba(25, 50, 60, 0.6);
-	width: 70vw;
+	color: rgba(25, 50, 60, 0.8);
 
 }
 
 .titulo-topo h1{
-	font-size: 48px;
+	font-size: 2.5em;
 	font-family: var(--fonte-sub);
 	color: #19323c;
 }
@@ -163,7 +162,7 @@ ul, figure, h2, h1, p {
 
 	z-index: 1;
 
-	margin: 20px;
+	width: 60vw;
 }
 
 
@@ -187,19 +186,20 @@ ul, figure, h2, h1, p {
 
 .titulo-topo a {
 	text-decoration: none;
-	font-size: 25px;
-	background-color: #19323c;
+	font-size: 1.2em;
+	border: 2px solid #19323c;
+
 	font-family: var(--fonte-sub);
 	padding: 10px 20px 10px 20px;
-	color: rgb(252, 252, 248, 0.5);
+	color: rgb(25, 50, 60, 0.8);
 	border-radius: 5px;
 	text-align: center;
 	box-sizing: content-box;
 }
 
 .titulo-topo a:hover {
-	color: rgb(252, 252, 248);
-	background-color: #30bced;
+	color: #fcfcf8;
+	background-color: #19323c;
 }
 
 
@@ -213,7 +213,19 @@ ul, figure, h2, h1, p {
 	grid-auto-flow: row;
 
 	align-items: center;
-	justify-items: center
+	justify-items: center;
+
+	width: 50vw;
+	justify-self: center;
+
+}
+
+.box-interno {
+	display: grid;
+	grid-gap: 50px;
+	width: auto;
+    height: auto;
+
 }
 
 
@@ -224,7 +236,6 @@ ul, figure, h2, h1, p {
 	grid-auto-flow: row;
 	grid-gap: 50px;
 	align-self: baseline;
-	margin-top: 70px;
 }
 
 .box-serv figure{
@@ -245,33 +256,35 @@ ul, figure, h2, h1, p {
 	color: #19323c;
 	font-family: var(--fonte-sub);
 	text-align: center;
-	font-size: 17px;
+	font-size: 1em;
 	font-weight: bold;
 }
 
 .sub-titulo {
-    align-self: end;
-    grid-gap: 10px;
-    margin-bottom: 10px; 
+	align-self: end;
+	grid-gap: 10px;
+	justify-items: center;
+	text-align: center;
 
 }
 .sub-titulo h2{
 	font-family: var(--fonte-sub);
 	font-weight: bold;
-	font-size: 35px;
+	font-size: 2em;
 	color: #19323c;
 }
 
 .sub-titulo p{
 	font-family: var(--fonte-sub);
-	font-size: 15px;
-	color: rgb(25, 50, 60, 0.6);
-	width: 70%;
-	text-align: center;
+	font-size: 1em;
+	color: rgb(25, 50, 60, 0.8);
 }
 
 
+.box-total {
+	width: 100vw!important;
 
+}
 
 .cont-galeria {
 	display: inline-grid;
@@ -378,11 +391,12 @@ ul, figure, h2, h1, p {
 	-ms-grid-column-gap: 20px;
 	-ms-grid-row-gap: 50px;
 
-	width: 50vw;
 	height: auto;
 	box-sizing: border-box;
 
 	font-family: var(--fonte-sub);
+
+	width: 100%;
 }
 
 .nome {
@@ -428,7 +442,7 @@ ul, figure, h2, h1, p {
 }
 
 .descricao {
-	grid-column: auto/ span 3;
+	grid-column: auto/ span 2;
 	grid-row: auto/ span 1;
 
 	-ms-grid-column: auto/ span 3;
@@ -438,9 +452,15 @@ ul, figure, h2, h1, p {
 	border-radius: 5px;
 }
 
+.servico {
+grid-column: auto/ span 2;
+}
+
+
+
 .formselect {
 	background-color: #fcfcf8;
-	font-size: 16px;
+	font-size: 1em;
 	border:none;
 	color: #19323c;
 	font-family: var(--fonte-sub);
@@ -482,7 +502,7 @@ ul, figure, h2, h1, p {
 	height: 100%;
 	text-align: left;
 	padding: 5px;
-	font-size:16px;
+	font-size:1em;
 	border: none;
 	border-radius: 5px;
 	box-sizing: border-box;
@@ -496,22 +516,22 @@ ul, figure, h2, h1, p {
 }
 
 .btn-fala button {
-	background-color: #19323c;
-	border: none;
+	background-color: #fcfcf8;
+	border: 2px solid #19323c;
 	border-radius: 5px;
 	padding: 10px;
-	font-size: 16px;
+	font-size: 1em;
 	font-weight: bold;
-	color: rgb(252, 252, 248, 0.5);
+	color: rgb(25, 50, 60, 0.8);
 }
 
 .btn-fala button:hover {
-	background-color:#30bced;
-	color: rgb(252, 252, 248);
+	background-color: #19323c;
+	color: #fcfcf8;
 }
 
 .btn-fala p {
-	font-size: 14px;
+	font-size: 1em;
 	color: #19323c;
 }
 
@@ -523,7 +543,7 @@ ul, figure, h2, h1, p {
 .group input {
 	border: none;
 	height: auto;
-	font-size:16px;
+	font-size:1em;
 	padding: 5px 0px 5px 10px;
 	display:block;
 	width:100%;
@@ -538,7 +558,7 @@ ul, figure, h2, h1, p {
 /* LABEL ======================================= */
 .group label          {
 	color:#19323c; 
-	font-size:16px;
+	font-size:1em;
 	font-weight:normal;
 	position:absolute;
 	pointer-events:none;
@@ -552,7 +572,7 @@ ul, figure, h2, h1, p {
 /* active state */
 .group input:focus ~  label, .group input:valid ~  label    {
 	top:-20px;
-	font-size:12px;
+	font-size:0.8em;
 	color:#30bced;
 	padding: 0px 0px 0px 0px;
 }
