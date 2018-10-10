@@ -36,9 +36,6 @@ ul, figure, h2, h1, p {
 	background-image: url(../img/fundo-topo.jpg);
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
-
-	box-shadow: 0 0 20px 0px #19323c;
-
 	z-index: 5;
 	    justify-items: center;
 
@@ -98,6 +95,7 @@ ul, figure, h2, h1, p {
 	z-index: 10;
 
 	width: 100%;
+		box-shadow: 0 0 20px 0px #19323c;
 
 	background-color: #19323c;
 }
