@@ -108,6 +108,14 @@ var qtdFotos = $('.cont-galeria').children().length;
 
  }
 
+ function MenuRedes() {
+
+    var largura = $(window).width();
+
+    console.log(largura); 
+
+ }
+
 
 //Esse carra chama as funções conforme o carregamento da página ocorra sem erro
 jQuery(document).ready(function($) {
@@ -117,8 +125,9 @@ jQuery(document).ready(function($) {
 	/*Chama o efeiro do Topo*/
 	$(document).on("scroll", function() {
 		TopoFixo();
-
 	});
+
+    MenuRedes();
 
 
 });
