@@ -25,9 +25,7 @@ var qtdFotos = $('.cont-galeria').children().length;
  	$('.cont-galeria figure:nth-child(' + sort[1] + ')').addClass('ocultar');
 
  	controle = sort;
-
  }
-
         //Funçao que sorteia um numero e aplica na id da seção
         function Sorteio() {
         	var sorteio = Math.floor((Math.random()* qtdFotos) + 1);
@@ -59,7 +57,6 @@ var qtdFotos = $('.cont-galeria').children().length;
         	} ,2000);
         });
     };
-
 
     /*Efeito menu topo*/ 
     function TopoFixo() {
@@ -128,7 +125,5 @@ jQuery(document).ready(function($) {
 	});
 
     MenuRedes();
-
-
 });
 
