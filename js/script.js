@@ -101,17 +101,16 @@ var qtdFotos = $('.cont-galeria').children().length;
  	else {
  		kids.removeClass("menu-ativo");
  	}
-
-
  }
 
- function MenuRedes() {
+ function SocialAtivar(ind, clas) {
+	$("#Menu-Social figure:nth-child(n)").removeClass();
+	$("#Menu-Social figure:nth-child("+ ind +")").addClass(clas);
+	$("#Menu-Social figure:nth-child("+ ind +")").addClass("ico-ativo");
 
-    var largura = $(window).width();
+}
 
-    console.log(largura); 
 
- }
 
 
 //Esse carra chama as funções conforme o carregamento da página ocorra sem erro
@@ -124,6 +123,19 @@ jQuery(document).ready(function($) {
 		TopoFixo();
 	});
 
-    MenuRedes();
+	$("#Menu-Social figure").click(function(){
+		$("#Social-Box").toggleClass("social-ativo");	
+	});
+
+	$("#Servicos, #Galeria, #Solicite, #Rodape, .menu-pintura,.box-super").mouseenter(function(){
+		$("#Menu-Social figure:nth-child(n)").removeClass();
+		$("#Social-Box").removeClass("social-ativo");	
+		
+	});
+
+	
+
 });
+
+
 
