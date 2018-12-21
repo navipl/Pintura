@@ -79,23 +79,29 @@ var qtdFotos = $('.cont-galeria').children().length;
 
     /*Esse trecho identifica a seção que esta sendo visualizada e marca ela no menu*/
  	var s = $("#Servicos").position().top;//Posição da seção serviços
- 	var g = $("#Galeria").position().top;//Posição da seção Galeria
+	 var g = $("#Galeria").position().top;//Posição da seção Galeria
+	 var c = $("#Contatos").position().top;//Posição da seção orgamentos
  	var o = $("#Solicite").position().top;//Posição da seção orgamentos
  	var kids = $(".menu-pintura").children();//Variavel que recebe os itens do menu
 
- 	if (docScroll >= s && docScroll < g) {
+ 	if (docScroll >= s - 60 && docScroll < g - 60) {
         kids.removeClass("menu-ativo");//remove a borda de todos os itens do menu
  		$(".menu-pintura li:nth-child(1)").addClass("menu-ativo");//Add a borda ao primeiro item
  	}
 
- 	else if (docScroll >= g && docScroll < o) {
+ 	else if (docScroll >= g - 60 && docScroll < c - 60) {
  		kids.removeClass("menu-ativo");//remove a borda de todos os itens do menu
  		$(".menu-pintura li:nth-child(2)").addClass("menu-ativo");//Add a borda ao segundo item
- 	}
+	 }
 
- 	else if (docScroll >= o) {
+	 else if (docScroll >= c - 60 && docScroll < o - 60) {
+		kids.removeClass("menu-ativo");//remove a borda de todos os itens do menu
+		$(".menu-pintura li:nth-child(3)").addClass("menu-ativo");//Add a borda ao segundo item
+	}
+
+ 	else if (docScroll >= o - 60) {
  		kids.removeClass("menu-ativo");//remove a borda de todos os itens do menu
- 		$(".menu-pintura li:nth-child(3)").addClass("menu-ativo");//Add a borda ao terceiro item
+ 		$(".menu-pintura li:nth-child(4)").addClass("menu-ativo");//Add a borda ao terceiro item
  	}
 
  	else {
@@ -106,12 +112,8 @@ var qtdFotos = $('.cont-galeria').children().length;
  function SocialAtivar(ind, clas) {
 	$("#Menu-Social figure:nth-child(n)").removeClass();
 	$("#Menu-Social figure:nth-child("+ ind +")").addClass(clas);
-	$("#Menu-Social figure:nth-child("+ ind +")").addClass("ico-ativo");
 
 }
-
-
-
 
 //Esse carra chama as funções conforme o carregamento da página ocorra sem erro
 jQuery(document).ready(function($) {
@@ -121,16 +123,18 @@ jQuery(document).ready(function($) {
 	/*Chama o efeiro do Topo*/
 	$(document).on("scroll", function() {
 		TopoFixo();
+
+		$("#Menu-Social figure:nth-child(n)").removeClass();
+		$("#Social-Box").removeClass("social-ativo");	
 	});
 
 	$("#Menu-Social figure").click(function(){
 		$("#Social-Box").toggleClass("social-ativo");	
-	});
+	})
 
-	$("#Servicos, #Galeria, #Solicite, #Rodape, .menu-pintura,.box-super").mouseenter(function(){
+	$("#Menu-Social").mouseleave(function(){
 		$("#Menu-Social figure:nth-child(n)").removeClass();
 		$("#Social-Box").removeClass("social-ativo");	
-		
 	});
 
 	
