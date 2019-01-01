@@ -125,7 +125,8 @@ jQuery(document).ready(function($) {
 		TopoFixo();
 
 		$("#Menu-Social figure:nth-child(n)").removeClass();
-		$("#Social-Box").removeClass("social-ativo");	
+		$("#Social-Box").removeClass("social-ativo");
+		$("#Topo-Menu .box-menu").removeClass("boton-menu-ativo");	
 	});
 
 	$("#Menu-Social figure").click(function(){
@@ -137,7 +138,15 @@ jQuery(document).ready(function($) {
 		$("#Social-Box").removeClass("social-ativo");	
 	});
 
-	
+
+	$("#Botao-Menu .boton-menu").click(function(){
+		console.log("Teste");
+		$("#Topo-Menu .box-menu").toggleClass("boton-menu-ativo");	
+	})
+
+	$("#Topo-Menu").mouseleave(function(){
+		$("#Topo-Menu .box-menu").removeClass("boton-menu-ativo");	
+	});
 
 });
 
