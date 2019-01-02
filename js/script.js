@@ -130,6 +130,7 @@ jQuery(document).ready(function($) {
 	});
 
 	$("#Menu-Social figure").click(function(){
+		
 		$("#Social-Box").toggleClass("social-ativo");	
 	})
 
@@ -140,7 +141,6 @@ jQuery(document).ready(function($) {
 
 
 	$("#Botao-Menu .boton-menu").click(function(){
-		console.log("Teste");
 		$("#Topo-Menu .box-menu").toggleClass("boton-menu-ativo");	
 	})
 
