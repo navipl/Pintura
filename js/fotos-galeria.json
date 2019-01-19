@@ -1,0 +1,16 @@
+{
+    "fotos":[
+        {"fLocal":"img/galeria/foto_1.jpeg", "fDesc":"Teste 1"},
+        {"fLocal":"img/galeria/foto_2.jpeg", "fDesc":"Teste 2"},
+        {"fLocal":"img/galeria/foto_3.jpeg", "fDesc":"Teste 3"},
+        {"fLocal":"img/galeria/foto_4.jpeg", "fDesc":"Teste 4"},
+        {"fLocal":"img/galeria/foto_5.jpeg", "fDesc":"Teste 5"},
+        {"fLocal":"img/galeria/foto_6.jpeg", "fDesc":"Teste 6"},
+        {"fLocal":"img/galeria/foto_7.jpeg", "fDesc":"Teste 7"},
+        {"fLocal":"img/galeria/foto_8.jpeg", "fDesc":"Teste 8"},
+        {"fLocal":"img/galeria/foto_9.jpeg", "fDesc":"Teste 9"},
+        {"fLocal":"img/galeria/foto_10.jpeg", "fDesc":"Teste 10"},
+        {"fLocal":"img/galeria/foto_11.jpeg", "fDesc":"Teste 11"},
+        {"fLocal":"img/galeria/foto_12.jpeg", "fDesc":"Teste 12"}
+    ]
+}
