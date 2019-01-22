@@ -403,10 +403,10 @@ grid-row: 1/2;
 	display: grid;	
 }
 
-.mod-galeria{
+#ModGaleria{
 	grid-column: 1 /2;
     grid-row: 1/2;
-    background-color: rgba(25, 50, 60, 0.6);
+    background-color: rgba(25, 50, 60, 0.5);
 	border-radius: 10px;
 	
 	display: grid;
@@ -442,10 +442,12 @@ grid-row: 1/2;
 
 .cont-mod figure img {
 	width: 65vw;
-	height: 40vw;
+	height: auto;
 	align-self: center;
 	justify-self: center;
 	border-radius: 10px;
+
+	box-shadow: 0 0 20px 9px rgb(25, 50, 60);
 }
 
 .mod-botao{
@@ -487,7 +489,7 @@ grid-row: 1/2;
 	visibility: visible;
 }
 
-.mod-exit {
+#ModExit {
 align-self: baseline;
 justify-self: right;
 
@@ -505,7 +507,7 @@ display: grid;
 
 }
 
-.mod-exit span {
+#ModExit span {
 	width: 30px;
 	height: 3px;
 	background-color: rgba(252, 252, 248, 0.7);
@@ -514,7 +516,7 @@ display: grid;
 	position: relative;
 }
 
-.mod-exit span:nth-child(1){
+#ModExit span:nth-child(1){
 	-webkit-transform:rotate(225deg);
     -moz-transform:rotate(225deg);
     -o-transform:rotate(225deg);
@@ -522,7 +524,7 @@ display: grid;
 	bottom: -1.5px;
 }
 
-.mod-exit span:nth-child(2){
+#ModExit span:nth-child(2){
 	-webkit-transform: rotate(135deg);
     -moz-transform: rotate(2135deg);
     -o-transform: rotate(135deg);
@@ -1186,8 +1188,8 @@ top: 100%
 	}
 
 	.cont-mod figure img {
-		width: 35vw;
-		height: 20vw;
+		width: 30vw;
+		height: auto;
 	}
 
 

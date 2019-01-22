@@ -20,7 +20,6 @@ function PiscaPisca() {
 	var controle = [];
 
 	var mapaFotos = MapaGaleria(qtdFotos, indexFotos);
-	console.log(indexFotos[1].fLocal);
 
 	//Funçao oculta a seção solicitada
 	function Ocultar() {
@@ -41,19 +40,21 @@ function PiscaPisca() {
 		mapaFotos[sort[0] - 1] = NovaFoto();
 		mapaFotos[sort[1] - 1] = NovaFoto();
 
-		var trocaFt = setTimeout(function () {
-			$('.cont-galeria figure:nth-child(' + sort[0] + ') img').attr("src", indexFotos[mapaFotos[sort[0] - 1]].fLocal);
-			$('.cont-galeria figure:nth-child(' + sort[1] + ') img').attr("src", indexFotos[mapaFotos[sort[1] - 1]].fLocal);
-		}, 1000);
+
 
 
 		$('.cont-galeria figure:nth-child(' + sort[0] + ')').addClass('ocultar');
 		$('.cont-galeria figure:nth-child(' + sort[1] + ')').addClass('ocultar');
 
+		var trocaFt = setTimeout(function () {
+			$('.cont-galeria figure:nth-child(' + sort[0] + ') img').attr("src", indexFotos[mapaFotos[sort[0] - 1]].fLocal);
+			$('.cont-galeria figure:nth-child(' + sort[1] + ') img').attr("src", indexFotos[mapaFotos[sort[1] - 1]].fLocal);
+		}, 1000);
+
 		//Se o mouse estiver encima das imagens a animação para
 		$('.cont-galeria').mouseover(function () {
 			Limpar();
-			clearInterval(trocaFto);
+			clearInterval(trocaFt);
 		});
 
 		controle = sort;
@@ -99,7 +100,6 @@ function PiscaPisca() {
 		var contBusca = 0;
 
 		while (!busca) {
-			console.log(p);
 			if (p == mapaFotos[contBusca]) {
 				p++;
 				contBusca = 0;
@@ -263,6 +263,21 @@ jQuery(document).ready(function ($) {
 	$("#Topo-Menu").mouseleave(function () {
 		$("#Topo-Menu .box-menu").removeClass("boton-menu-ativo");
 	});
+
+
+	$("#ConteudoGaleria .cont-galeria figure").on("click", function(){
+		console.log("teste");
+		var c = $(this).html();
+		$("#ModGaleria .cont-mod figure").html(c);
+		$("#ModGaleria").toggleClass('moldal-inativo moldal-ativo');
+	});
+
+	$("#ModExit").on("click", function(){
+		$("#ModGaleria").toggleClass('moldal-inativo moldal-ativo');
+	});
+
+
+
 
 });
 
